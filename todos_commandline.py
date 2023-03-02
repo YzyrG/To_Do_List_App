@@ -11,7 +11,7 @@ print(now)
 
 while True:
     # 得到用户输入并去除多余空格以小写形式赋给变量user_action
-    user_action = input("Type add, edit, complete, show or exit: ").strip().lower()
+    user_action = input("Type add, edit, finish, show or exit: ").strip().lower()
 
     # 新增
     if user_action.startswith("add"):
@@ -44,7 +44,7 @@ while True:
             row = f"{index + 1}-{item[:-1].title()}"  # item[:-2]去除行间多余的空行
             print(row)  # print函数会自动换行
     # 删除已完成todo
-    elif user_action.startswith("complete"):
+    elif user_action.startswith("finish"):
         try:
             todos = todos_functions.get_todos()
 
