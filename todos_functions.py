@@ -1,8 +1,8 @@
 """
 To_Do_List_App  Functions
 """
-FILEPATH = "todos.txt"
 
+FILEPATH = "todos.txt"
 
 def get_todos(filepath=FILEPATH):
     """将已有文件:todos中的内容读入todos变量, 并返回此list"""
