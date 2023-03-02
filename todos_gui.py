@@ -2,10 +2,17 @@
 TO_DO_List GUI style
 """
 
+import os
 import time
 import todos_functions
 import PySimpleGUI as psg
 
+#  todos.txt文件不存在时，自动创建
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", 'w') as file:
+        pass
+
+#  设置gui主题
 psg.theme('DarkGreen')
 
 # 第一行
@@ -41,6 +48,7 @@ while True:
             todos.append(todo)
             todos_functions.put_todos(to_dos=todos)
             window['todos'].update(values=todos)  # 输完新的todo点击Add后将新的todos显示在list_box中
+            window['todo'].update(value=' ')  # 注意这里的参数是value单数形式
         case "Edit":
             try:
                 todo_before = values["todos"][0]   # values字典的key "todos"拿到的value是个列表，所以还需要再用index取一下
