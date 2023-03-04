@@ -19,6 +19,7 @@ def put_todos(to_dos, filepath=FILEPATH):
         file_now.writelines(todos_new)
 
 
+# 运行本文件时执行
 if __name__ == "__main__":
     print(get_todos())
 
